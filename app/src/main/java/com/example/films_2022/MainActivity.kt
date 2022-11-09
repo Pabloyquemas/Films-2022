@@ -14,8 +14,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Thread{
-            val movie = apiClient.getMovies()
-            Log.d("@dev", "Movies: $movie")
-        }
+            val movies = apiClient.getMovies()
+            Log.d("@dev", "Movies: $movies")
+            val movie = apiClient.getMovie("a")
+            Log.d("@dev", "Movie: $movie")
+        }.start()
     }
 }
