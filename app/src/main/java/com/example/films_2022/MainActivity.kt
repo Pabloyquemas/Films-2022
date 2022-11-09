@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         Thread{
             val movies = apiClient.getMovies()
             Log.d("@dev", "Movies: $movies")
-            val movie = apiClient.getMovie("a")
+            val movie = apiClient.GetMoviesById("avenger-endgame")
             Log.d("@dev", "Movie: $movie")
         }.start()
     }

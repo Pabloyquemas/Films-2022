@@ -9,6 +9,6 @@ interface ApiServices {
     @GET("movies")
     fun GetMovies(): Call<List<MoviesApiModel>>
 
-    @GET("id/{movieId}")
-    fun GetMovie(@Path("movieId") movieID: String): Call<MoviesApiModel>
+    @GET("id/{moviesId}")
+    fun GetMovie(@Path("moviesId") moviesId: String): Call<MoviesApiModel>
 }

@@ -29,8 +29,8 @@ class ApiClient {
         }
         return emptyList()
     }
-    fun getMovie(movieId: String): MoviesApiModel?{
-        val call = apiServices.GetMovie(movieId).execute()
+    fun GetMoviesById(moviesId: String): MoviesApiModel?{
+        val call = apiServices.GetMovie(moviesId).execute()
         return call.body()
-    }
+}
 }
