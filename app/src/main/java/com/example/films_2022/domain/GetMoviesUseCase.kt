@@ -4,7 +4,7 @@ class GetMoviesUseCase(
     private val MoviesRepository : MoviesRepository
 ) {
     fun execute(): List<Movies>{
-        val movies = MoviesRepository.GetMovies()
+        val movies = MoviesRepository.getmovies()
         return emptyList()
     }
 }

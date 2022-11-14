@@ -21,16 +21,16 @@ class ApiClient {
 
     fun buildApiEndPoints() = createRetrofitClient().create(ApiServices::class.java)
 
-    fun getMovies(): List<MoviesApiModel>{
-        val movies = apiServices.GetMovies()
+    fun getmovies(): List<MoviesApiModel>{
+        val movies = apiServices.getmovies()
         val response = movies.execute()
         if (response.isSuccessful){
             return response.body() ?: emptyList()
         }
         return emptyList()
     }
-    fun GetMoviesById(moviesId: String): MoviesApiModel?{
-        val call = apiServices.GetMovie(moviesId).execute()
+    fun getmoviesbyId(moviesId: String): MoviesApiModel?{
+        val call = apiServices.getmovie(moviesId).execute()
         return call.body()
 }
 }
