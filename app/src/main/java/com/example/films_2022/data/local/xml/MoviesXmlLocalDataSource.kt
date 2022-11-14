@@ -16,7 +16,7 @@ class MoviesXmlLocalDataSource(private val sharedPreferences: SharedPreferences)
         editor.apply()
     }
 
-    override fun GetMovies(): List<Movies> {
+    override fun getmovies(): List<Movies> {
         val movies: MutableList<Movies> = mutableListOf()
         sharedPreferences.all.forEach{ map ->
             movies.add(gson.fromJson(map.value as String, Movies::class.java))
@@ -24,7 +24,7 @@ class MoviesXmlLocalDataSource(private val sharedPreferences: SharedPreferences)
         return movies
     }
 
-    override fun GetMovie(movieId: String): Movies? {
+    override fun getmovie(movieId: String): Movies? {
         return sharedPreferences.getString(movieId.toString(), null)?.let {
             gson.fromJson(it, Movies::class.java)
         }

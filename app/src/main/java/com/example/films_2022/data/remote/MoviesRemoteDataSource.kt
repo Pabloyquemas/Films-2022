@@ -5,5 +5,5 @@ import com.example.films_2022.domain.Movies
 
 interface MoviesRemoteDataSource {
     fun getMovies(): List<Movies>
-    fun GetMoviesById(movieId: String): Movies?
+    fun getmoviesbyId(movieId: String): Movies?
 }
