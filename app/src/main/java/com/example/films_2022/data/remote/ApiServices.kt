@@ -1,5 +1,6 @@
-package com.example.films_2022.data.remote.Api
+package com.example.films_2022.data.remote
 
+import com.example.films_2022.data.remote.Api.MoviesApiModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

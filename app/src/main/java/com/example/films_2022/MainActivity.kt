@@ -3,7 +3,7 @@ package com.example.films_2022
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.films_2022.data.remote.Api.ApiClient
+import com.example.films_2022.data.remote.ApiClient
 
 class MainActivity : AppCompatActivity() {
 

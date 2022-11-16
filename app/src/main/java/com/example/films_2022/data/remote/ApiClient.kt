@@ -1,6 +1,6 @@
-package com.example.films_2022.data.remote.Api
+package com.example.films_2022.data.remote
 
-import com.google.gson.GsonBuilder
+import com.example.films_2022.data.remote.Api.MoviesApiModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
