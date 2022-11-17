@@ -5,6 +5,6 @@ class GetMoviesUseCase(
 ) {
     fun execute(): List<Movies>{
         val movies = MoviesRepository.getmovies()
-        return emptyList()
+        return movies
     }
 }
