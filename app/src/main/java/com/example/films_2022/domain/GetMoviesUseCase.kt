@@ -18,4 +18,6 @@ class GetMoviesUseCase(
         }
         return list
     }
+
+    data class MoviesFeed(val id: String, val title: String, val genre: String, val rating: Double, val poster: String)
 }

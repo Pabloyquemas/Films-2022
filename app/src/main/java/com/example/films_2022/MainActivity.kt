@@ -4,20 +4,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.films_2022.data.remote.ApiClient
+import com.example.films_2022.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val apiClient = ApiClient()
+    private var binding: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setupBinding()
+    }
 
-        Thread{
-            val movies = apiClient.getMovies()
-            Log.d("@dev", "Movies: $movies")
-            val movie = apiClient.GetMoviesById("avenger-endgame")
-            Log.d("@dev", "Movie: $movie")
-        }.start()
+    private fun setupBinding(){
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding?.let {
+            setContentView(it.root)
+        }
     }
 }
