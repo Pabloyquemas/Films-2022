@@ -34,3 +34,5 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesViewHolder>(){
 
     override fun getItemCount(): Int = dataItems.size
 }
+
+

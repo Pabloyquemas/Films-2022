@@ -3,16 +3,14 @@ package com.example.films_2022.domain
 class GetMoviesUseCase(
     private val MoviesRepository : MoviesRepository
 ) {
-    fun execute(): List<Movies>{
+     fun execute(): List<MoviesFeed> {
         val movie = MoviesRepository.getmovies()
         val list = movie.map { movies ->
-            Movies(
+            MoviesFeed(
                 movies.id,
                 movies.title,
                 movies.plot,
-                movies.genre,
                 movies.rating,
-                movies.year,
                 movies.poster
             )
         }

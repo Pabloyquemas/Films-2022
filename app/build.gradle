@@ -76,4 +76,5 @@ dependencies {
     //fragment
     def fragment_version = "1.5.4"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
 }

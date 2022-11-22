@@ -15,6 +15,8 @@ class MoviesFeedViewModel(private val getMoviesUseCase: GetMoviesUseCase): ViewM
     }
 
     fun loadMovies(){
+        moviesFeedPublisher.value = moviesUiState(true)
+
         viewModelScope.launch(Dispatchers.IO) {
             val moviesfeed = getMoviesUseCase.execute()
             moviesFeedPublisher.postValue(
@@ -29,6 +31,6 @@ class MoviesFeedViewModel(private val getMoviesUseCase: GetMoviesUseCase): ViewM
 
     data class moviesUiState(
         val isLoading: Boolean = false,
-        val moviesFeed: List<Movies> = emptyList()
+        val moviesFeed: List<GetMoviesUseCase.MoviesFeed> = emptyList()
     )
 }
