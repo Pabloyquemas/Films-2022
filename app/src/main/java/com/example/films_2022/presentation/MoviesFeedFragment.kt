@@ -57,7 +57,7 @@ class MoviesFeedFragment: Fragment() {
     }
 
     private fun navigateToDetail(movieId: String){
-        findNavController().navigate(MovieFe)
+
     }
 
 
