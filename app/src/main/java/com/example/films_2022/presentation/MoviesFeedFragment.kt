@@ -1,11 +1,13 @@
 package com.example.films_2022.presentation
 
 import android.os.Bundle
+import android.text.Layout.Directions
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.films_2022.databinding.FragmentMoviesFeedBinding
 import com.example.films_2022.presentation.adapter.MoviesAdapter
@@ -39,6 +41,9 @@ class MoviesFeedFragment: Fragment() {
             listmoviesfeed.apply {
                 adapter = MoviesAdapter
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
+                MoviesAdapter.setOnClickItem {
+                    navigateToDetail(it)
+                }
             }
         }
     }
@@ -51,6 +56,9 @@ class MoviesFeedFragment: Fragment() {
         viewModel.moviesFeedPublisher.observe(viewLifecycleOwner, moviesFeedSubscriber)
     }
 
+    private fun navigateToDetail(movieId: String){
+        findNavController().navigate(MovieFe)
+    }
 
 
 }
