@@ -17,4 +17,12 @@
         android:name="com.example.films_2022.presentation.MoviesDetailFragment"
         tools:layout="@layout/fragment_movies_detail"/>
 
+        <argument
+            android:name="movieId"
+            app:argType="string"
+            app:nullable="false"
+            >
+
+        </argument>
+
 </navigation>
