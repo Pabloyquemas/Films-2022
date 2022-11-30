@@ -10,18 +10,17 @@ import kotlinx.coroutines.launch
 
 class MoviesDetailViewModel(private val getMoviesDetailUseCase: GetMoviesDetailUseCase): ViewModel() {
 
-    val moviesFeedPublisher: MutableLiveData<moviesDetailUiState> by lazy {
+    val moviesFeedPublisherdetail: MutableLiveData<moviesDetailUiState> by lazy {
         MutableLiveData<moviesDetailUiState>()
     }
 
     fun loadMoviesDetail(moviesId: String){
-        moviesFeedPublisher.value = moviesDetailUiState(true)
+        moviesFeedPublisherdetail.value = moviesDetailUiState()
 
         viewModelScope.launch(Dispatchers.IO) {
             val moviesdetailfeed = getMoviesDetailUseCase.execute(moviesId)
-            moviesFeedPublisher.postValue(
+            moviesFeedPublisherdetail.postValue(
                 moviesDetailUiState(
-                    isLoading = false,
                     moviesFeedDetail = moviesdetailfeed
 
                 )
@@ -30,8 +29,7 @@ class MoviesDetailViewModel(private val getMoviesDetailUseCase: GetMoviesDetailU
     }
 
     data class moviesDetailUiState(
-        val isLoading: Boolean = false,
-        val moviesFeedDetail: GetMoviesDetailUseCase.moviesbyid? = null
+        val moviesFeedDetail: GetMoviesDetailUseCase.Moviesbyid? = null
     )
 
 }

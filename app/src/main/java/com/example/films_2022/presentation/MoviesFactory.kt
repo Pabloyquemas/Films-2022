@@ -7,6 +7,7 @@ import com.example.films_2022.data.local.xml.MoviesXmlLocalDataSource
 import com.example.films_2022.data.remote.Api.MovieApiRemoteDataSource
 import com.example.films_2022.data.remote.ApiClient
 import com.example.films_2022.data.remote.MoviesRemoteDataSource
+import com.example.films_2022.domain.GetMoviesDetailUseCase
 import com.example.films_2022.domain.GetMoviesUseCase
 import com.example.films_2022.domain.MoviesRepository
 
@@ -18,8 +19,18 @@ class MoviesFactory {
 
     fun getMoviesViewModel(applicationContext: Context) = MoviesFeedViewModel(getMoviesUseCase(applicationContext))
 
+    fun getMoviesDetailViewModel(
+        applicationContext: Context
+    ): MoviesDetailViewModel{
+        return MoviesDetailViewModel(getMoviesDetailUseCase(applicationContext))
+    }
     private fun getMoviesUseCase(context: Context): GetMoviesUseCase{
         return GetMoviesUseCase(
+            getMoviesRepository(context)
+        )
+    }
+    private fun getMoviesDetailUseCase(context: Context): GetMoviesDetailUseCase{
+        return GetMoviesDetailUseCase(
             getMoviesRepository(context)
         )
     }
