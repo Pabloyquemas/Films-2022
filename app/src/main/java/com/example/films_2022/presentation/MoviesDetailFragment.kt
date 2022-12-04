@@ -46,7 +46,7 @@ class MoviesDetailFragment : Fragment() {
 
     fun bind (movie: GetMoviesDetailUseCase.Moviesbyid){
         _binding?.apply {
-            movieDetailFragment.genre.text = movie.genre
+            movieDetailFragment.plot.text = movie.plot
             movieDetailFragment.title.text = movie.title
             movieDetailFragment.year.text = movie.year
             movieDetailFragment.poster.loadUrl(movie.poster)

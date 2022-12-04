@@ -12,7 +12,7 @@ class MoviesDetailViewHolder(private val view:View): RecyclerView.ViewHolder(vie
     fun bind (movie: GetMoviesDetailUseCase.Moviesbyid){
         val item = ViewItemMoviesDetailBinding.bind(view)
         item.title.text = movie.title
-        item.genre.text = movie.genre
+        item.plot.text = movie.plot
         item.year.text = movie.year
         item.poster.loadUrl(movie.poster)
     }

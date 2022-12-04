@@ -8,11 +8,11 @@ class GetMoviesDetailUseCase(
         return Moviesbyid(
             movies.id,
             movies.title,
-            movies.genre,
+            movies.plot,
             movies.year,
             movies.poster
         )
     }
 
-    data class Moviesbyid(val id: String, val title: String, val genre: String, val year: String, val poster: String)
+    data class Moviesbyid(val id: String, val title: String, val plot: String, val year: String, val poster: String)
 }
