@@ -30,7 +30,7 @@ class MoviesDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = MoviesFactory().getMoviesDetailViewModel(requireContext())
         setupObserver()
-        viewModel?.loadMoviesDetail(moviesId = String())
+        viewModel?.loadMoviesDetail(arguments?.getString("movieId") ?: "error")
 
     }
 
