@@ -9,9 +9,10 @@ class GetMoviesUseCase(
             MoviesFeed(
                 movies.id,
                 movies.title,
-                movies.plot,
+                movies.genre,
                 movies.rating,
-                movies.poster
+                movies.poster,
+
             )
         }
         return list

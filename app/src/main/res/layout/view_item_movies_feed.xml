@@ -16,42 +16,55 @@
             android:src="@drawable/ic_launcher_background"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/desc"
+            android:background="@color/black_transparent"
+            android:backgroundTintMode="add"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="@id/img"
-            app:layout_constraintTop_toTopOf="@id/img">
+            app:layout_constraintBottom_toBottomOf="@id/img"
+            android:layout_margin="10dp">
             <TextView
                 android:id="@+id/title"
-                android:textColor="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Title"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@id/desc"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/genre"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Este es el titulo de la pelicula"/>
-            <TextView
-                android:id="@+id/genre"
-                android:textColor="@color/red"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/title"
                 app:layout_constraintTop_toBottomOf="@id/title"
-                android:ellipsize="end"
                 android:textSize="10sp"
                 android:text="Genero"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_star2"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintEnd_toStartOf="@id/rating"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:tint="@color/yellow"
+                android:backgroundTint="@color/yellow"/>
             <TextView
                 android:id="@+id/rating"
-                android:textColor="@color/red"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
                 android:text="9.5"
-                app:layout_constraintTop_toBottomOf="@id/genre"
-
-                app:layout_constraintEnd_toEndOf="@id/title"/>
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
